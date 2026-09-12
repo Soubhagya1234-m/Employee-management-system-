@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Employee</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+        .container {
+            width: 500px;
+            margin: 100px auto;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+        button {
+            padding: 12px 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            padding: 12px 20px;
+            background: gray;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Delete Employee</h2>
+        <p>
+            Are you sure you want to delete
+            <strong>{{ employee.name }}</strong>?
+        </p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">
+                Yes, Delete
+            </button>
+            <a href="{% url 'employee_list' %}">
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Employee Management</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #222;
+            padding: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <a href="{% url 'home' %}">
+        Home
+    </a>
+
+    <a href="{% url 'employee_list' %}">
+        Employees
+    </a>
+
+    <a href="{% url 'employee_create' %}">
+        Add Employee
+    </a>
+
+</div>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Employee Management System</h1>
+
+        <h2>
+            Total Employees:
+            {{ total_employees }}
+        </h2>
+
+        <a
+            href="{% url 'employee_list' %}"
+            class="btn"
+        >
+            View Employees
+        </a>
+
+        <a
+            href="{% url 'employee_create' %}"
+            class="btn"
+        >
+            Add Employee
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+        .container {
+            width: 600px;
+            margin: 40px auto;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+        .row {
+            margin: 15px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>Employee Details</h1>
+        <div class="row">
+            <strong>ID:</strong>
+            {{ employee.id }}
+        </div>
+        <div class="row">
+            <strong>Name:</strong>
+            {{ employee.name }}
+        </div>
+        <div class="row">
+            <strong>Email:</strong>
+            {{ employee.email }}
+        </div>
+        <div class="row">
+            <strong>Phone:</strong>
+            {{ employee.phone }}
+        </div>
+        <div class="row">
+            <strong>Department:</strong>
+            {{ employee.department }}
+        </div>
+        <div class="row">
+            <strong>Designation:</strong>
+            {{ employee.designation }}
+        </div>
+        <div class="row">
+            <strong>Salary:</strong>
+            {{ employee.salary }}
+        </div>
+        <div class="row">
+            <strong>Joining Date:</strong>
+            {{ employee.joining_date }}
+        </div>
+        <div class="row">
+            <strong>Address:</strong>
+            {{ employee.address }}
+        </div>
+        <br>
+        <a href="{% url 'employee_update' employee.id %}" class="btn"> Edit</a>
+        <a href="{% url 'employee_list' %}" class="btn"> Back</a>
+    </div>
+</div>
+</body>
+</html>
